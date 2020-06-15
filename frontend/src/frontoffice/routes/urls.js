@@ -2,6 +2,8 @@
 const urls = {
   HOME: "/",
   LOGIN: "/login",
+  ALLACCOUNTS: "/all-accounts",
+  SINGLEACCOUNT: "/single-account",
   NOTFOUND: "/404"
 };
 

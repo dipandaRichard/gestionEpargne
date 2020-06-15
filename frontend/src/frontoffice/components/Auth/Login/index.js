@@ -1,30 +1,30 @@
 import React from "react";
 import { connect } from "react-redux";
-import { withTranslation } from 'react-i18next';
 
 import Navbar from "app-js/frontoffice/components/Snippets/Navbar/index"
+import LoginForm from "./LoginForm/index"
 
 
-import './style.local.css';
+// import './style.local.css';
 
 
 export default 
 @connect((state, props) => ({}))
-class Accounts extends React.Component {
+class LoginPage extends React.Component {
   componentWillMount() {
-    document.title = 'Home'
+    document.title = 'Login'
   }
 
 
   render() {
-    console.log("PROPPPPPPPPPPPPPPPPPP", this.props)
 
     return (
       //<!-- Document Wrapper -->
-      <div className="accounts">
+      <div className="login_page">
         <Navbar />
         
-        <p>porte d'entrée du projet gestionEpargne !</p>
+        <h1>Login page !</h1>
+        <LoginForm />
 
       </div>
     );

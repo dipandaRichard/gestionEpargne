@@ -1,7 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
-
+import {Link} from "react-router-dom"
 import './style.local.css';
+import urls from "../../../routes/urls";
 
 
 export default
@@ -34,15 +35,18 @@ class Navbar extends React.Component {
               </ul>
 
               <ul className="navbar-nav ml-auto">
-                {/* <li className="nav-item">
-                  <a className="nav-link" href="#">Mes notes</a>
-                </li> */}
+                <li className="nav-item">
+                  <Link className="nav-link" to={urls.ALLACCOUNTS}>Tous Les Comptes</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to={urls.SINGLEACCOUNT}>Tous Les CLIENT</Link>
+                </li>
                 <li className="nav-item dropdown">
                   <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i className="fa fa-user text-white"></i>
                   </a>
                   <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a className="dropdown-item" href="#">Action</a>
+                    <Link className="dropdown-item" to={urls.LOGIN}>Login</Link>
                     <a className="dropdown-item" href="#">Another action</a>
                     <div className="dropdown-divider"></div>
                     <a className="dropdown-item" href="#">Something else here</a>
