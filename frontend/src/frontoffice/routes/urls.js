@@ -3,7 +3,7 @@ const urls = {
   HOME: "/",
   LOGIN: "/login",
   ALLACCOUNTS: "/all-accounts",
-  SINGLEACCOUNT: "/single-account",
+  MEMBER: "/member",
   NOTFOUND: "/404"
 };
 

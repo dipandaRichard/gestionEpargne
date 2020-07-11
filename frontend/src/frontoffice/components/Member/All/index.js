@@ -4,11 +4,9 @@ import Button from '@material-ui/core/Button'
 
 
 import Navbar from "app-js/frontoffice/components/Snippets/Navbar"
-import RegisterForm from "app-js/frontoffice/components/Snippets/RegisterForm/index"
 import CustomTable from "app-js/frontoffice/components/Snippets/CustomTable/index"
 
-import Operations from "../../Snippets/Operations";
-import BalanceGrid from "../../Snippets/BalanceGrid";
+
 
 
 
@@ -17,9 +15,9 @@ import BalanceGrid from "../../Snippets/BalanceGrid";
 
 export default 
 @connect((state, props) => ({}))
-class Single_Account extends React.Component {
+class Member extends React.Component {
   componentWillMount() {
-    document.title = 'Single-Account'
+    document.title = 'Member'
   }
 
 

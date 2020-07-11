@@ -39,7 +39,7 @@ class Navbar extends React.Component {
                   <Link className="nav-link" to={urls.ALLACCOUNTS}>Tous Les Comptes</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to={urls.SINGLEACCOUNT}>Tous Les CLIENT</Link>
+                  <Link className="nav-link" to={urls.MEMBER}>Tous les membres</Link>
                 </li>
                 <li className="nav-item dropdown">
                   <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
