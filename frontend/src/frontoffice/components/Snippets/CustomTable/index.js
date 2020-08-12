@@ -28,62 +28,141 @@ const StyledTableRow = withStyles((theme) => ({
   },
 }))(TableRow);
 
-function createData(id, date, account, client, balance, action) {
-  return { id, date, account, client, balance, action };
+function createDataEpargne(id, date, amount, benefit, total) {
+  return { id, date, amount, benefit, total };
 }
 
-const rows = [
-  createData(1, '11-05-2020 11:50', '11110000222', 'John Doe', '200000', ''),
-  createData(2, 'Ice cream sandwich', 237, 9.0, 37, ''),
-  createData(3,'Eclair', 262, 16.0, 24, ''),
-  createData(4, 'Cupcake', 305, 3.7, 67, ''),
-  createData(5, 'Gingerbread', 356, 16.0, 49, ''),
+const rowsDataEpargne = [
+  createDataEpargne(2,  new Date().toLocaleDateString(), 237, 9.0, 37),
+  createDataEpargne(3, new Date().toLocaleDateString(), 262, 16.0, 24),
+  createDataEpargne(4,  new Date().toLocaleDateString(), 305, 3.7, 67),
+  createDataEpargne(5,  new Date().toLocaleDateString(), 356, 16.0, 49),
+];
+
+
+function createDataEmprunt(id, date, amount, rate, benefit, deathline, loan, rest) {
+  return { id, date, amount, rate, benefit, deathline, loan, rest};
+}
+
+const rowsDataEmprunt = [
+  createDataEmprunt(2,  new Date().toLocaleDateString(), 237, 9.0, 37, new Date().toLocaleDateString(), 35, 22,),
+  createDataEmprunt(3, new Date().toLocaleDateString(), 262, 16.0, 24, new Date().toLocaleDateString(), 35, 22,),
+  createDataEmprunt(4,  new Date().toLocaleDateString(), 305, 3.7, 67, new Date().toLocaleDateString(), 35, 22,),
+  createDataEmprunt(5,  new Date().toLocaleDateString(), 356, 16.0, 49, new Date().toLocaleDateString(), 35, 22,),
 ];
 
 const useStyles = makeStyles({
   table: {
     minWidth: 700,
   },
+  titleStyle: {
+    padding:"20px 0"
+  }
 });
 
 function handleClick(id){
     alert("Id selectionné : " + id)
 }
 
-export default function CustomTable() {
+export default function CustomTable(props) {
   const classes = useStyles();
 
   return (
     <TableContainer component={Paper}>
+      <h2 className={classes.titleStyle} >{props.tableTitle}</h2>
       <Table className={classes.table} aria-label="customized table">
-        <TableHead>
-          <TableRow>
-            <StyledTableCell>Date</StyledTableCell>
-            <StyledTableCell align="right">Compte</StyledTableCell>
-            <StyledTableCell align="right">Client</StyledTableCell>
-            <StyledTableCell align="right">Solde</StyledTableCell>
-            <StyledTableCell align="right">Actions</StyledTableCell>
-          </TableRow>
-        </TableHead>
+        
+          {props.tableType == "epargne"  &&
+          (
+            <TableHead>
+              <TableRow>
+                <StyledTableCell align="left">{props.tableEntete.id}</StyledTableCell>
+                <StyledTableCell align="left">{props.tableEntete.date}</StyledTableCell>
+                <StyledTableCell align="right">{props.tableEntete.montant}</StyledTableCell>
+                <StyledTableCell align="right">{props.tableEntete.interet}</StyledTableCell>
+                <StyledTableCell align="right">{props.tableEntete.total}</StyledTableCell>
+              </TableRow>
+            </TableHead>
+          ) }
+         { props.tableType == "emprunt"  &&
+          (
+            <TableHead>
+              <TableRow>
+                <StyledTableCell align="left">{props.tableEntete.id}</StyledTableCell>
+                <StyledTableCell align="left">{props.tableEntete.date}</StyledTableCell>
+                <StyledTableCell align="right">{props.tableEntete.montant}</StyledTableCell>
+                <StyledTableCell align="right">{props.tableEntete.taux}</StyledTableCell>
+                <StyledTableCell align="right">{props.tableEntete.interet}</StyledTableCell>
+                <StyledTableCell align="right">{props.tableEntete.echeance}</StyledTableCell>
+                <StyledTableCell align="right">{props.tableEntete.avance}</StyledTableCell>
+                <StyledTableCell align="right">{props.tableEntete.reste}</StyledTableCell>
+              </TableRow>
+            </TableHead>
+          ) }
+        
+
         <TableBody>
-          {rows.map((row) => (
-            <StyledTableRow key={row.id}>
-              <StyledTableCell component="th" scope="row">
-                {row.date}
-              </StyledTableCell>
-              <StyledTableCell align="right">{row.account}</StyledTableCell>
-              <StyledTableCell align="right">{row.client}</StyledTableCell>
-              <StyledTableCell align="right">{row.balance}</StyledTableCell>
-              <StyledTableCell align="right">
-                    <span onClick={ (e) => {
-                         e.preventDefault()
-                         handleClick(row.id)
-                         } }>
-                        <i className="fa fa-pen"></i> {row.action}
-                    </span>
-                </StyledTableCell>
+          {
+            props.tableType == "epargne"  &&
+            (  
+              rowsDataEpargne.map((row) => (
+                <StyledTableRow key={row.id}>
+                  <StyledTableCell align="left">{row.id}</StyledTableCell>
+                  <StyledTableCell align="left">{row.date}</StyledTableCell>
+                  <StyledTableCell align="right">{row.amount}</StyledTableCell>
+                  <StyledTableCell align="right">{row.benefit}</StyledTableCell>
+                  <StyledTableCell align="right">{row.total}</StyledTableCell>
+                </StyledTableRow>
+              ))
+            )
+          } 
+
+          {
+          props.tableType == "emprunt"  &&
+            (  
+              rowsDataEmprunt.map((row) => (
+                <StyledTableRow key={row.id}>
+                  <StyledTableCell align="left">{row.id}</StyledTableCell>
+                  <StyledTableCell align="left">{row.date}</StyledTableCell>
+                  <StyledTableCell align="right">{row.amount}</StyledTableCell>
+                  <StyledTableCell align="right">{row.rate}</StyledTableCell>
+                  <StyledTableCell align="right">{row.benefit}</StyledTableCell>
+                  <StyledTableCell align="right">{row.deathline}</StyledTableCell>
+                  <StyledTableCell align="right">{row.loan}</StyledTableCell>
+                  <StyledTableCell align="right">{row.rest}</StyledTableCell>
+                </StyledTableRow>
+              ))
+            )
+          }
+
+
+        
+          {props.tableType == "epargne"  && (
+            <StyledTableRow>
+              <TableCell rowSpan={0}></TableCell>
+              <TableCell  align="right" colSpan={3}>
+                Total
+              </TableCell>
+              <TableCell align="right">10000 FCFA</TableCell>
+             </StyledTableRow>
+          )
+          }
+          {props.tableType == "emprunt"  && (
+            <StyledTableRow>
+              <TableCell  align="right" colSpan={1}>
+                Total
+              </TableCell>
+              <TableCell align="right" colSpan={1}></TableCell>
+              <TableCell align="right" colSpan={1}>45iuy FCFA</TableCell>
+              <TableCell align="right" colSpan={1}></TableCell>
+              <TableCell align="right" colSpan={1}>999999</TableCell>
+              <TableCell align="right" colSpan={1}></TableCell>
+              <TableCell align="right" colSpan={1}>1111</TableCell>
+              <TableCell align="right" colSpan={0}>222222</TableCell>
             </StyledTableRow>
-          ))}
+          )
+          }
+         
         </TableBody>
       </Table>
     </TableContainer>

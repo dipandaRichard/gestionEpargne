@@ -4,6 +4,8 @@ const urls = {
   LOGIN: "/login",
   ALLACCOUNTS: "/all-accounts",
   MEMBER: "/member",
+  SINGLE_MEMBER: "/single-member",
+  DASHBOARD:"/analytic",
   NOTFOUND: "/404"
 };
 

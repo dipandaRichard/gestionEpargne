@@ -36,10 +36,16 @@ class Navbar extends React.Component {
 
               <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
+                  <Link className="nav-link" to={urls.DASHBOARD}>Tableau de bord</Link>
+                </li>
+                <li className="nav-item">
                   <Link className="nav-link" to={urls.ALLACCOUNTS}>Tous Les Comptes</Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to={urls.MEMBER}>Tous les membres</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to={urls.SINGLE_MEMBER}>Membre</Link>
                 </li>
                 <li className="nav-item dropdown">
                   <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

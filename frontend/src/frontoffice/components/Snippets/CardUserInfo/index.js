@@ -21,43 +21,31 @@ const useStyles = makeStyles({
   pos: {
     marginBottom: 12,
   },
+  bloc_top: {
+    padding: 20
+  }
 });
 
-export default function SimpleCard(props) {
+export default function SimpleCard() {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
 
-  
-
   return (
     <Card className={classes.root}>
-
-      <h3>{props.cardTitle} </h3>
       <CardContent>
-      
-      <div className={`row ${classes.bloc_bottom}`}>
-          <div className={`col-4`}>
-            <p style={{frontSize:"50 px" }} >Montant:</p>
-            <p>Interêts:</p>
-            <p>TOTAL :</p>
+        <div className={`row ${classes.bloc_top}`}>
+          <div className={`col-2`}>
+            <div className={classes.pic_wrapper}>
+              <i className="fa fa-user fa-6x"></i>
+            </div>
           </div>
-         
-          <div className="col-6" style={{textAlign:"right"}}>
-            <h4>100000</h4>
-            <h4>5000</h4>
-            <h3>105000</h3>
-          </div>
-          <div className="col-2" style={{textAlign:"right"}}>
-            <h4>Fcfa</h4>
-            <h4>Fcfa</h4>
-            <h4>Fcfa</h4>
+          <div className="col-10">
+            <h4>Compte N°: 12U00040</h4>
+            <h3>DIPANDA Achile Richard</h3>
+            <h4>Tel: 12U00040</h4>
           </div>
         </div>
-        
       </CardContent>
-      <CardActions>
-        <Button size="small" onClick={props.handleOpenModal} >Détails</Button>
-      </CardActions>
     </Card>
   );
 }
