@@ -36,6 +36,9 @@ class Navbar extends React.Component {
 
               <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
+                  <Link className="nav-link" to={urls.OPERATIONS}>Operations</Link>
+                </li>
+                <li className="nav-item">
                   <Link className="nav-link" to={urls.DASHBOARD}>Tableau de bord</Link>
                 </li>
                 <li className="nav-item">

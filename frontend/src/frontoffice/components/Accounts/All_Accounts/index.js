@@ -5,11 +5,11 @@ import Button from '@material-ui/core/Button'
 import Navbar from "app-js/frontoffice/components/Snippets/Navbar"
 import { withStyles } from '@material-ui/core/styles';
 import RegisterForm from "../../Snippets/RegisterForm";
-import Operations from "../../Snippets/Operations";
+import Operations from "../../Snippets/OperationsButtons";
 import AccountForm from "../../Snippets/AccountForm";
 import BalanceGrid from "../../Snippets/BalanceGrid";
-import DepositForm from "../../Snippets/Operations/DepositForm";
-import RefundForm from "../../Snippets/Operations/RefundForm";
+import DepositForm from "../../Snippets/OperationsButtons/DepositForm";
+import RefundForm from "../../Snippets/OperationsButtons/RefundForm";
 import AddAccount from "../../Snippets/AddAccount";
 import { default as AntdModal} from 'antd/lib/modal';
 import Table from "../../Snippets/EditableTable"

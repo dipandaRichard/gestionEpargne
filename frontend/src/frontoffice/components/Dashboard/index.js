@@ -79,14 +79,32 @@ class Dashboard extends React.Component {
         <div className="container">
             <div className="row" style={{marginBottom:20, marginTop:20}}>
                 <div className="col-3" >
-                  <div className="card"
-                   style={{width: "16rem", height:"12rem", backgroundColor:"pink"}}>
-                    <img src="..." class="card-img-top" alt="..."/>
-                    <div className="card-body">
-                      <h5 className="card-title">Epargnes</h5>
-                      <h3 className="card-text"> 1.000.000.000.000 Fcfa .</h3>
+                  <div className="card" style={{ backgroundColor:"pink", padding: 15}}>
+                     <div className="row" style={{ marginLeft: 0, marginRight: 0 }}>
+                       <div className="col-10" style={{ paddingLeft: 0, paddingRight: 0 }}>
+                        <h5 className="card-title">Epargnes</h5>
+                       </div>
+                       <div className="col-2"></div>
+                     </div>
+                     <div className="row" style={{ marginLeft: 0, marginRight: 0 }}>
+                      <div className="col-4" style={{ paddingLeft: 0, paddingRight: 0 }}>
+                        <div className="row" style={{ marginLeft: 0, marginRight: 0 }}>12K XAF</div>
+                        <div className="row" style={{ marginLeft: 0, marginRight: 0 }}>10M XAF</div>
+                      </div>
+                      <div className="col-4">
+                        <i className="fas fa-chart-line fa-3x"></i>
+                      </div>
+                      <div className="col-4" style={{ paddingRight: 0 }}>
+                        <span className="text-success">
+                          <i className="fa fa-arrow-up"></i>
+                          &nbsp; &nbsp;
+                          15,2%
+                        </span>
+                      </div>
+                     </div>
+                     <div className="row" style={{ marginLeft: 0, marginRight: 0, marginTop: 20 }}>
                       <a href="#" className="btn btn-primary" onClick={this.setModalopen.bind(this)}>Details</a>
-                    </div>
+                     </div>
                   </div>
                 </div>
                 <div className="col-3">

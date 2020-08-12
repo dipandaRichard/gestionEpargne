@@ -9,6 +9,8 @@ import Modal from "@material-ui/core/Modal"
 import {withStyles} from "@material-ui/core/styles"
 import CustomTable from "app-js/frontoffice/components/Snippets/CustomTable/index"
 
+
+
 const useStyle=(theme)=>({
   modalPaper:{
     position:"absolute",
@@ -91,12 +93,14 @@ class Single extends React.Component {
       <div className="single_member">
         <Navbar />
         
-        <div className="container">
+        <div className="container" style={{marginBottom:20 }}>
             <div className="row" style={{marginBottom:20, marginTop:20}}>
                 <div class="col-12" >
                     <CardMember/>
                 </div>
             </div>
+            
+            
             <div className="row" style={{marginBottom:20}}>
                 <div className="col">
                   <Card cardTitle="Epargnes" handleOpenModal={this.setModalopen.bind(this, "epargne") } />
