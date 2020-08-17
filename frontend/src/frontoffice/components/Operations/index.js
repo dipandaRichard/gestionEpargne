@@ -9,6 +9,7 @@ import CustomTable from "app-js/frontoffice/components/Snippets/CustomTable/inde
 import OperationsButtons from "app-js/frontoffice/components/Snippets/OperationsButtons/index"
 import Deposit from "app-js/frontoffice/components/Snippets/OperationsButtons/DepositForm"
 import Refund from "app-js/frontoffice/components/Snippets/OperationsButtons/RefundForm"
+import Loan from "app-js/frontoffice/components/Snippets/OperationsButtons/LoanForm/index.js"
 import {withStyles} from "@material-ui/core/styles"
 
 const useStyle=(theme)=>({
@@ -83,7 +84,7 @@ class Member extends React.Component {
                 variant="contained" 
                 color="primary"  
                 style={{ width: "200px", margin: "0 auto", marginTop: 20 }}
-                onClick={ this.setModalopen.bind(this, null) }
+                onClick={ this.setModalopen.bind(this, <Loan />) }
               >
                 Emprunt
               </Button>

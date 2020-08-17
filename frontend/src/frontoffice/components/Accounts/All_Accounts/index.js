@@ -7,7 +7,7 @@ import { withStyles } from '@material-ui/core/styles';
 import RegisterForm from "../../Snippets/RegisterForm";
 import Operations from "../../Snippets/OperationsButtons";
 import AccountForm from "../../Snippets/AccountForm";
-import BalanceGrid from "../../Snippets/BalanceGrid";
+import BalanceGrid from "../../Snippets/OperationsButtons/LoanForm";
 import DepositForm from "../../Snippets/OperationsButtons/DepositForm";
 import RefundForm from "../../Snippets/OperationsButtons/RefundForm";
 import AddAccount from "../../Snippets/AddAccount";
@@ -73,43 +73,43 @@ class All_Accounts extends React.Component {
     })
   }
 
-  _renderModalContent(value_content){
-    const { classes } = this.props
+  // _renderModalContent(value_content){
+  //   const { classes } = this.props
 
-    switch(value_content){
-      case 'add_account':
-        return (
-          <div>
-            <h2 id="transition-modal-title" className={classes.header_style}>Nouveau Compte</h2>
-            <AddAccount handleSubmit={this._handlesubmitForm.bind(this)}/>
-          </div>
-        )
-      case 'deposit_form':
-        return(
-          <div>
-            <h2 id="transition-modal-title" className={classes.header_style}>Dépôt</h2>
-            <DepositForm handleSubmit={this._handlesubmitForm.bind(this)} />
-          </div>
-          )
-      case 'rent_form':
-        return(
-          <div>
-            <h2 id="transition  -modal-title" className={classes.header_style}>Emprunt</h2>
-            <BalanceGrid handleSubmit={this._handlesubmitForm.bind(this)} />
-          </div>
-          )
-      case 'refund_form':
-        return(
-          <div>
-            <h2 id="transition  -modal-title" className={classes.header_style}>Remboursement</h2>
-            <RefundForm handleSubmit={this._handlesubmitForm.bind(this)} />
-          </div>
-          )
+  //   switch(value_content){
+  //     case 'add_account':
+  //       return (
+  //         <div>
+  //           <h2 id="transition-modal-title" className={classes.header_style}>Nouveau Compte</h2>
+  //           <AddAccount handleSubmit={this._handlesubmitForm.bind(this)}/>
+  //         </div>
+  //       )
+  //     case 'deposit_form':
+  //       return(
+  //         <div>
+  //           <h2 id="transition-modal-title" className={classes.header_style}>Dépôt</h2>
+  //           <DepositForm handleSubmit={this._handlesubmitForm.bind(this)} />
+  //         </div>
+  //         )
+  //     case 'rent_form':
+  //       return(
+  //         <div>
+  //           <h2 id="transition  -modal-title" className={classes.header_style}>Emprunt</h2>
+  //           <BalanceGrid handleSubmit={this._handlesubmitForm.bind(this)} />
+  //         </div>
+  //         )
+  //     case 'refund_form':
+  //       return(
+  //         <div>
+  //           <h2 id="transition  -modal-title" className={classes.header_style}>Remboursement</h2>
+  //           <RefundForm handleSubmit={this._handlesubmitForm.bind(this)} />
+  //         </div>
+  //         )
 
-          default:
-            return null
-    }
-  }
+  //         default:
+  //           return null
+  //   }
+  // }
 
 
   render() {
