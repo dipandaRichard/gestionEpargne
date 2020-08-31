@@ -17,6 +17,11 @@ const useStyles = makeStyles((theme) => ({
   form_container: {
     padding: "20px",
     width: "600px",
+  },
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
   }
 }));
 

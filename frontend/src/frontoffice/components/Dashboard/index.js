@@ -79,7 +79,7 @@ class Dashboard extends React.Component {
           <div className="container">
             <div className="row" style={{marginBottom:20, marginTop:20}}>
                 <div className="col-3" >
-                  <div className="card" style={{ backgroundColor:"gray", marginBottom:20, padding: 15}}>
+                  <div className="card" style={{ backgroundColor:"salmon", marginBottom:20, padding: 15}}>
                      <div className="row" style={{ marginLeft: 0, marginRight: 0 }}>
                        <div className="col-10" style={{ paddingLeft: 0, paddingRight: 0 }}>
                         <h5 className="card-title">Epargnes</h5>
